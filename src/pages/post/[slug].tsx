@@ -95,16 +95,16 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const prismic = getPrismicClient({});
   const posts = await prismic.getByType('post');
 
-  // const paths = posts.results.map( path => ( { params: {slug: path.uid}} ))
+  const paths = posts.results.map( path => ( { params: {slug: path.uid}} ))
 
   return {
-    paths: [],
+    paths,
     fallback: true
     // O teste exige que utilize fallback true para renderizar tela de loading
   }
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
+export const getStaticProps: GetStaticProps<PostProps> = async ({ params }) => {
 
   const { slug } = params;
 
