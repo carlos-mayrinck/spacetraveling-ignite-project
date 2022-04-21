@@ -1,1 +1,53 @@
-// TODO
+.postsContainer {
+  max-width: 700px;
+  margin: 0 auto 5rem;
+
+  button {
+    margin-top: 1rem;
+  }
+}
+
+.post{
+  display: block;
+  margin-top: 3rem;
+
+  & + .post{
+    margin: 3rem 0;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    line-height: 2rem;
+    color: var(--gray-050);
+    margin-bottom: 0.5rem;
+    transition: color 0.2s;
+  }
+  
+  p {
+    font-size: 1.12rem;
+    line-height: 1.3rem;
+    color: var(--gray-200);
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+  }
+
+  &:hover {
+    h2 {
+      color: var(--pink-500);
+    }
+  }
+}
+
+.loadMoreButton {
+  background: none;
+  border: none;
+  color: var(--pink-500);
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: text-decoration 0.2s;
+
+  &:hover{
+    text-decoration: underline;
+  }
+}

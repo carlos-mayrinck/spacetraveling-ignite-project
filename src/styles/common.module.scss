@@ -1,1 +1,19 @@
-// TODO
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.postInfo {
+  font-size: 0.87rem;
+  color: var(--gray-300);
+
+  svg{
+    margin-right: 0.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+  time, span {
+    margin-right: 1.5rem;
+  }
+}
