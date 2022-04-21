@@ -114,7 +114,22 @@ export const getStaticProps: GetStaticProps = async () => {
     pageSize: 2,
   });
 
-  const posts = parsePosts(postsResponse.results);
+  const posts = postsResponse.results.map( post => {
+    return {
+      uid: post.uid,
+      first_publication_date: format(
+        new Date(post.first_publication_date),
+        'dd MMMM yyyy',
+        {
+          locale: ptBR
+        }),
+      data: {
+        title: post.data.title,
+        subtitle: post.data.subtitle,
+        author: post.data.author
+      }
+    }
+  });
 
   const { next_page } = postsResponse;
 
